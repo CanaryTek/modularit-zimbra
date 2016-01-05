@@ -35,12 +35,28 @@ end
 
 # Zimbra version
 version = node['modularit']['zimbra']['version']
+tag = node['modularit']['zimbra']['tag']
 
 # Add IP host to /etc/hosts
+# OJO!!! BORRAR el ipv6 y el zimbra en localhost
 node_ip=node['ipaddress']
 hostname=%x[uname -n].chomp
 hostsfile_entry node_ip do
   hostname  hostname
+  action    :create_if_missing
+end
+# Delete ipv6 localhost entry. zmconfigd doesn't like it
+hostsfile_entry "::1" do
+  action    :remove
+end
+# Delete hostname in 127.0.0.1 entry
+hostsfile_entry "127.0.0.1" do
+  hostname  hostname
+  action    :remove
+end
+# Plain localhost entry
+hostsfile_entry "127.0.0.1" do
+  hostname  "localhost"
   action    :create_if_missing
 end
 
@@ -60,9 +76,9 @@ bash "install-zimbra" do
   Chef::Log.info("Download and install zimbra. This can take a looong time")
   cwd Chef::Config[:file_cache_path]
   code <<-EOH
-    wget -N "http://files2.zimbra.com/downloads/8.0.3_GA/zcs-#{version}.tgz"
-    tar zxvf zcs-#{version}.tgz
-    cd zcs-#{version}/packages
+    wget -N "http://files2.zimbra.com/downloads/#{version}/zcs-#{version}_#{tag}.tgz"
+    tar zxvf zcs-#{version}_#{tag}.tgz
+    cd zcs-#{version}_#{tag}/packages
     yum -y localinstall #{node['modularit']['zimbra']['packages']}
   EOH
   creates "/opt/zimbra/libexec/zmsetup.pl"

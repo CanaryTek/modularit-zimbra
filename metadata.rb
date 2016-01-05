@@ -7,7 +7,7 @@ long_description  IO.read(File.join(File.dirname(__FILE__), 'README.md'))
 version           "0.0.1"
 recipe            "modularit-zimbra", "Installs and configures Zimbra"
 
-%w{apt yum}.each do |pkg|
+%w{hostsfile rasca}.each do |pkg|
   depends pkg
 end
 

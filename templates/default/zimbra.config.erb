@@ -69,7 +69,7 @@ zimbraFeatureBriefcasesEnabled=Disabled
 zimbraFeatureTasksEnabled=Enabled
 zimbraIPMode=ipv4
 zimbraMailProxy=FALSE
-zimbraMtaMyNetworks=127.0.0.0/8 172.27.1.0/24 [::1]/128 [fe80::]/64
+zimbraMtaMyNetworks=127.0.0.0/8
 zimbraPrefTimeZoneId=America/Los_Angeles
 zimbraReverseProxyLookupTarget=TRUE
 zimbraVersionCheckNotificationEmail=admin@<%= @hostname %>
@@ -78,4 +78,4 @@ zimbraVersionCheckSendNotifications=TRUE
 zimbraWebProxy=FALSE
 zimbra_ldap_userdn=uid=zimbra,cn=admins,cn=zimbra
 zimbra_require_interprocess_security=1
-INSTALL_PACKAGES="zimbra-apache zimbra-core zimbra-ldap zimbra-logger zimbra-mta zimbra-snmp zimbra-spell zimbra-store "
+INSTALL_PACKAGES="zimbra-core zimbra-ldap zimbra-logger zimbra-mta zimbra-snmp zimbra-store zimbra-apache zimbra-spell"

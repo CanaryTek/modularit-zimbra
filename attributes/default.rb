@@ -6,9 +6,10 @@ case node['platform_family']
 when 'debian'
   ## Packages for Debian?
 when 'rhel','fedora'
-  default['modularit']['zimbra']['dependencies']=["nc","sudo","libidn","gmp","libstdc++","perl","sysstat","sqlite"]
+  default['modularit']['zimbra']['dependencies']=["nc","sudo","libidn","gmp","libstdc++","perl","sysstat","sqlite","perl-core","unzip"]
   default['modularit']['zimbra']['stop_services']=["nginx","postfix"]
-  default['modularit']['zimbra']['version']="8.0.3_GA_5664.RHEL6_64.20130305090204"
+  default['modularit']['zimbra']['version']="8.6.0_GA"
+  default['modularit']['zimbra']['tag']="1153.RHEL7_64.20141215151110"
   default['modularit']['zimbra']['checksum']="e263f2bcfcb3e059dcef23ba2b43060b"
   default['modularit']['zimbra']['packages']="zimbra-core* zimbra-store* zimbra-ldap* zimbra-logger* zimbra-mta* zimbra-snmp* zimbra-snmp* zimbra-apache* zimbra-spell*"
   default['modularit']['zimbra']['admin_pass']="changeme"
