@@ -122,11 +122,12 @@ rasca_object "SecPkgChk-zimbra" do
     "rsyslogd" => { :ports => [ "UDP/514" ] },
     "slapd" => { :ports => [ "TCP/389" ] },
     "rsyslogd" => { :ports => [ "UDP/514" ] },
+    "unbound" => { :ports => [ "UDP/ANY" ] },
     "smtpd" => { :ports => [ "TCP/25", "TCP/587", "TCP/465" ] },
     "master" => { :ports => [ "TCP/25", "TCP/587", "TCP/465" ] },
     "httpd" => { :ports => [ "TCP/7780" ] },
     "nginx" => { :ports => [ "TCP/7143", "TCP/7143", "TCP/7110", "TCP/7995", "TCP/7993" ] },
-    "java" => { :ports => [ "UDP/ANY", "TCP/80", "TCP/110", "TCP/143", "TCP/993", "TCP/995", "TCP/8101", "TCP/7071", "TCP/443", "TCP/5222", "TCP/5223", "TCP/5269", "TCP/7025", "TCP/7072", "TCP/7335", "TCP/7777", "TCP/8735", "TCP/10015", "TCP/41392", "TCP/9001", "TCP/50094", "TCP/44969", "TCP/7101", "TCP/4745", "TCP/49392", "TCP/40677", "TCP/8080", "TCP/8009", "TCP/60399", "TCP/4101", "TCP/40079", "TCP/41322", "TCP/3101", "TCP/56489" ] },
+    "java" => { :ports => [ "UDP/ANY", "TCP/80", "TCP/110", "TCP/143", "TCP/993", "TCP/995", "TCP/8101", "TCP/7071", "TCP/443", "TCP/5222", "TCP/5223", "TCP/5269", "TCP/7025", "TCP/7072", "TCP/7335", "TCP/7777", "TCP/8735", "TCP/10015", "TCP/41392", "TCP/9001", "TCP/50094", "TCP/44969", "TCP/7101", "TCP/4745", "TCP/49392", "TCP/40677", "TCP/8080", "TCP/8009", "TCP/60399", "TCP/4101", "TCP/40079", "TCP/41322", "TCP/3101", "TCP/56489", "TCP/8736" ] },
     "memcached" => { :ports => [ "TCP/11211", "UDP/11211" ] },
   }'
 end
